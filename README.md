@@ -74,7 +74,7 @@ The easiest way to use the package is through the provided launcher scripts.
 Make the launcher executable:
 
 ```bash
-chmod +x run_splscatt.sh
+chmod +x run_splscatt_linux.sh
 ```
 
 Run:
