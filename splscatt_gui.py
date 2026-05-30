@@ -124,9 +124,7 @@ def get_inputs():
     def browse():
 
         filename = filedialog.askopenfilename(
-
             title="Select potential file"
-
         )
 
         if filename:
@@ -139,46 +137,31 @@ def get_inputs():
 
         try:
             unit_system = unit_var.get()
-
             filename = file_entry.get()
-
             mu = float(mu_entry.get())
-
             E = float(E_entry.get())
-
             lmax = int(lmax_entry.get())
 
             status_label.config(
-
                 text="Running...",
-
                 fg="orange"
-
             )
 
             root.update()
 
             run_scatt(
-
                 unit_system,
-
                 filename,
-
                 mu,
-
                 E,
-
                 lmax
-
             )
 
             status_label.config(
-
                 text="Calculation finished. Output written to scatt.out",
-
                 fg="green"
-
             )
+            
         except Exception as err:
 
             messagebox.showerror(
@@ -206,65 +189,41 @@ def get_inputs():
     ).pack(pady=(10,0))
 
     tk.Label(
-
         root,
-
         text="A Spinless Partial-Wave Elastic Scattering Code",
-
         font=("Arial",10)
-
     ).pack()
 
     tk.Label(
-
         root,
-
         text="for Finite-Range Central Potentials",
-
         font=("Arial",10)
-
     ).pack(pady=(0,15))
 
     unit_var = tk.IntVar(value=1)
 
     tk.Label(
-
         root,
-
         text="Unit system"
-
     ).pack()
 
     tk.Radiobutton(
-
         root,
-
         text="Nuclear units (MeV, fm)",
-
         variable=unit_var,
-
         value=1
-
     ).pack(anchor="w", padx=30)
 
     tk.Radiobutton(
-
         root,
-
         text="Natural units (ħ = c = 1)",
-
         variable=unit_var,
-
         value=2
-
     ).pack(anchor="w", padx=30)
 
     tk.Label(
-
         root,
-
         text="Potential file"
-
     ).pack(pady=(10,0))
 
     file_frame = tk.Frame(root)
@@ -272,11 +231,8 @@ def get_inputs():
     file_frame.pack()
 
     file_entry = tk.Entry(
-
         file_frame,
-
         width=40
-
     )
 
     file_entry.pack(side="left")
@@ -284,21 +240,14 @@ def get_inputs():
     file_entry.insert(0, "potential.dat")
 
     tk.Button(
-
         file_frame,
-
         text="Browse",
-
         command=browse
-
     ).pack(side="left", padx=5)
 
     tk.Label(
-
         root,
-
         text="Reduced mass μ (amu)"
-
     ).pack()
 
     mu_entry = tk.Entry(root)
@@ -308,11 +257,8 @@ def get_inputs():
     mu_entry.insert(0, "1")
 
     tk.Label(
-
         root,
-
         text="Scattering energy E (MeV)"
-
     ).pack()
 
     E_entry = tk.Entry(root)
@@ -322,11 +268,8 @@ def get_inputs():
     E_entry.insert(0, "1")
 
     tk.Label(
-
         root,
-
         text="lmax"
-
     ).pack()
 
     lmax_entry = tk.Entry(root)
@@ -336,23 +279,15 @@ def get_inputs():
     lmax_entry.insert(0, "10")
 
     tk.Button(
-
         root,
-
         text="Run",
-
         command=run
-
     ).pack(pady=15)
 
     tk.Label(
-
         root,
-
         text="SPLSCATT v0.1 | © 2026 Nguyen Le Anh (PhD), HCMUE",
-
         fg="gray40"
-
     ).pack(side="bottom", pady=10)
 
     status_label = tk.Label(
