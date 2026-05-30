@@ -80,7 +80,7 @@ chmod +x run_splscatt_linux.sh
 Run:
 
 ```bash
-./run_splscatt.sh
+./run_splscatt_linux.sh
 ```
 
 The script automatically:
@@ -125,7 +125,7 @@ SPLSCATT/
 ├── potgen_gui.py
 ├── splscatt_gui.py
 │
-├── run_splscatt.sh
+├── run_splscatt_linux.sh
 ├── run_splscatt_macos.sh
 │
 ├── requirements.txt
@@ -141,7 +141,7 @@ SPLSCATT/
 | --------------------- | ------------------------- |
 | potgen_gui.py         | Potential generator       |
 | splscatt_gui.py       | Elastic scattering solver |
-| run_splscatt.sh       | Linux launcher            |
+| run_splscatt_linux.sh       | Linux launcher            |
 | run_splscatt_macos.sh | macOS launcher            |
 | potential.dat         | Generated potential       |
 | scatt.out             | Scattering output         |
